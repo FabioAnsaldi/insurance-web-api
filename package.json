@@ -1,0 +1,19 @@
+{
+  "name": "insurance-web-api",
+  "version": "1.0.0",
+  "description": "We want to create a Web API that exposes API services.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabioAnsaldi/insurance-web-api.git"
+  },
+  "author": "Fabio Ansaldi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabioAnsaldi/insurance-web-api/issues"
+  },
+  "homepage": "https://github.com/FabioAnsaldi/insurance-web-api#readme"
+}
