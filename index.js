@@ -1,6 +1,6 @@
 'use strict';
 
-const server = require("./src/core/server");
+const server = require("./src/server");
 
 const run = async () => {
 

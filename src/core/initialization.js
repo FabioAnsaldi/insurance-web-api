@@ -2,13 +2,13 @@
 
 const config = require("../../config/default.json");
 const logger = require("./logger");
-const routes = require("./routes");
+const routes = require("../routes");
 
 module.exports = () => {
 
     try {
 
-        let custom = process.argv[2];
+        let custom = process.argv[2] || 'default';
         let local = require(`../../config/${custom}`);
         let configuration = {...config, ...local};
 

@@ -1,8 +1,8 @@
 'use strict';
 
 const express = require('express');
-const initialization = require("./initialization");
-const logger = require("./logger");
+const initialization = require("./core/initialization");
+const logger = require("./core/logger");
 
 module.exports = {
 
