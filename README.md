@@ -48,8 +48,7 @@ $ npm run start custom.json
 If the your_local_address_ipyou is 127.0.0.1, you will see somethink like below:
 
 ```sh
-Web API are listening on 
-127.0.0.1:80
+listening on http://127.0.0.1:80/
 ```
 
 ### Contributing

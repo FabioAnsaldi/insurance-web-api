@@ -62,3 +62,6 @@ typings/
 
 # WebStorn Editor files
 .idea/
+
+# configuration environment
+config/
