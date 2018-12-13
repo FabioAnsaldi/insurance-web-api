@@ -45,7 +45,7 @@ You have to run the service with the optional parameter like below:
 ```sh
 $ npm run start custom.json
 ```
-If the your_local_address_ipyou is 127.0.0.1, you will see somethink like below:
+If the your_local_address_ip is 127.0.0.1, you will see something like below:
 
 ```sh
 listening on http://127.0.0.1:80/
