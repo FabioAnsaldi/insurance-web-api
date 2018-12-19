@@ -33,9 +33,9 @@ const init = () => {
 
     try {
 
-        let file = Date.now();
-        let envFilepath = `./logs/environment-${file}.log`;
-        let serFilepath = `./logs/server-${file}.log`;
+        const file = Date.now();
+        const envFilepath = `./logs/environment-${file}.log`;
+        const serFilepath = `./logs/server-${file}.log`;
 
         createFile(envFilepath);
         logger.environment = returnLogger(envFilepath);
