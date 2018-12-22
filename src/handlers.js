@@ -1,10 +1,10 @@
 module.exports = [
     {
-        identifier: 'pageView',
+        identifier: 'simpleView',
         method: 'GET',
         handle: (req, res) => {
 
-            res.render('home');
+            res.render(res.locals.template, {layout: res.locals.layout});
         }
     }
 ];
