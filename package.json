@@ -19,6 +19,7 @@
   "homepage": "https://github.com/FabioAnsaldi/insurance-web-api#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
     "express-pino-logger": "^4.0.0",
     "pino": "^5.9.0",
     "pino-pretty": "^2.4.0"

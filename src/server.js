@@ -3,6 +3,7 @@
 const express = require('express');
 const initialization = require("./core/initialization");
 const routing = require("./core/routing");
+const viewer = require("./core/viewer");
 const logger = require("./core/logger");
 const routes = require("./routes");
 const handlers = require("./handlers");
@@ -17,7 +18,9 @@ module.exports = {
 
             initialization();
             routing({server, routes, handlers});
-            let {address, port} = JSON.parse(process.env.CONFIG);
+            viewer({server});
+
+            const {address, port} = JSON.parse(process.env.CONFIG);
 
             server.listen(port, address, () => {
 

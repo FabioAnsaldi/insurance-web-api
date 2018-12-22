@@ -1,10 +1,10 @@
 module.exports = [
     {
-        identifier: 'landing',
+        identifier: 'pageView',
         method: 'GET',
         handle: (req, res) => {
 
-            res.send('Hello World!');
+            res.render('home');
         }
     }
 ];
