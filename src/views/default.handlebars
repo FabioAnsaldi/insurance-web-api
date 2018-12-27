@@ -1,6 +1,20 @@
-{{#if title}}
-    <h1>{{title}}</h1>
-{{/if}}
-{{#if content}}
-    <div>{{echo content}}</div>
-{{/if}}
+<header>
+    <div class="page-nav">
+        {{>nav}}
+    </div>
+    {{#if title}}
+        <div class="page-title">
+            <h1>{{title}}</h1>
+        </div>
+    {{/if}}
+</header>
+<main>
+    {{#if content}}
+        <div class="page-content">{{{content}}}</div>
+    {{/if}}
+</main>
+<footer>
+    <div class="page-footer">
+        <p>Powered by Fabio Ansaldi</p>
+    </div>
+</footer>

@@ -19,9 +19,11 @@ const getHandler = (options) => {
 
 const setTemplateMiddleware = (options) => {
 
-    const {layout, template, description, title, content} = options;
+    const {layout, template, description, title, content, path, routes} = options;
 
     return (req, res, next) => {
+        if (!path || path === '') throw new Error('Path not set');
+        else res.locals.path = path;
         if (!template || template === '') res.locals.template = 'default';
         else res.locals.template = template;
         if (!template || template === '') res.locals.layout = 'main';
@@ -32,6 +34,7 @@ const setTemplateMiddleware = (options) => {
         else res.locals.description = description;
         if (!content) res.locals.content = '';
         else res.locals.content = content;
+        res.locals.routes = routes;
         next();
     }
 };
@@ -47,11 +50,13 @@ module.exports = (options) => {
 
             let params = getHandler({handle: route.handle, handlers});
             let opt = {
+                path: route.path,
                 template: route.template,
                 title: route.title,
                 description: route.description,
                 content: route.content,
-                layout: viewEngine.defaultLayout
+                layout: viewEngine.defaultLayout,
+                routes: routes
             };
 
             if (params.method.toLowerCase() === 'get') {

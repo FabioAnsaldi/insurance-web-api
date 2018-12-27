@@ -10,6 +10,6 @@
     "ext": "handlebars",
     "defaultLayout": "main",
     "layoutsDir": "src/views/layouts",
-    "partialsDir": "src/views/lpartials"
+    "partialsDir": "src/views/partials"
   }
 }

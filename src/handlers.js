@@ -9,11 +9,17 @@ module.exports = [
                 layout: res.locals.layout,
                 title: res.locals.title,
                 description: res.locals.description,
+                content: res.locals.content,
                 helpers: {
 
-                    echo: (msg) => {
+                    echoNav: () => {
 
-                        return (msg);
+                        let links = '';
+                        res.locals.routes.forEach((route, i) => {
+
+                            links += `<a href="${route.path}" title="${route.title}">${route.title}</a>`;
+                        });
+                        return links;
                     }
                 }
             });
