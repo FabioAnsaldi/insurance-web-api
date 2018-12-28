@@ -17,6 +17,21 @@ const getHandler = (options) => {
     return result;
 };
 
+const mergeTemplates = (locals) => {
+
+    locals.template.helper = Object.assign({layout: locals.layout.name}, locals.layout.helper, locals.template.helper);
+};
+
+const setRoutes = (locals, routes) => {
+
+    routes.forEach((route, i) => {
+
+        delete route.content;
+        delete route.description;
+    });
+    locals.routes = routes;
+};
+
 const setTemplateMiddleware = (options) => {
 
     const {layout, template, description, title, content, path, routes} = options;
@@ -24,17 +39,18 @@ const setTemplateMiddleware = (options) => {
     return (req, res, next) => {
         if (!path || path === '') throw new Error('Path not set');
         else res.locals.path = path;
-        if (!template || template === '') res.locals.template = 'default';
-        else res.locals.template = template;
-        if (!template || template === '') res.locals.layout = 'main';
-        else res.locals.layout = layout;
         if (!title) res.locals.title = '';
         else res.locals.title = title;
         if (!description) res.locals.description = '';
         else res.locals.description = description;
         if (!content) res.locals.content = '';
         else res.locals.content = content;
-        res.locals.routes = routes;
+        if (!layout || layout === '') res.locals.layout = {name: 'main', helper: {}};
+        else res.locals.layout = {name: layout, helper: require(`../views/layouts/${layout}`)(res)};
+        if (!template || template === '') res.locals.template = {name: 'default', helper: {}};
+        else res.locals.template = {name: template, helper: require(`../views/${template}`)(res)};
+        setRoutes(res.locals, routes);
+        mergeTemplates(res.locals);
         next();
     }
 };
