@@ -7,7 +7,7 @@ module.exports = () => {
 
     try {
 
-        const custom = process.argv[2];
+        const custom = process.argv[2] || 'default';
         const local = require(`../../config/${custom}`);
         const configuration = {...config, ...local};
 
