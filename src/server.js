@@ -17,7 +17,7 @@ module.exports = {
             const server = express();
 
             initialization();
-            routing({server, routes, handlers});
+            routing({server, express, routes, handlers});
             viewer({server});
 
             const {address, port} = JSON.parse(process.env.CONFIG);

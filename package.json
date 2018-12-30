@@ -23,5 +23,8 @@
     "express-pino-logger": "^4.0.0",
     "pino": "^5.9.0",
     "pino-pretty": "^2.4.0"
+  },
+  "devDependencies": {
+    "bower": "^1.8.4"
   }
 }

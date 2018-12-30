@@ -8,7 +8,7 @@ As an insurance company we've been asked to develop an application that manages 
 
 ### Local Setup
 To preview the website locally:
-1. Install [git](https://git-scm.com/) if you don't have them already.
+1. Install [git](https://git-scm.com/) to manage Git repository.
 2. Install [npm](https://www.npmjs.com/) to run the service.
 3. You also need to install [nodejs](https://nodejs.org/en/) on your local machine.
 

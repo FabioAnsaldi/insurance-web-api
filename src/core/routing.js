@@ -1,6 +1,7 @@
 'use strict';
 
 const logger = require("./logger");
+const path = require("path");
 
 const getHandler = (options) => {
 
@@ -19,7 +20,11 @@ const getHandler = (options) => {
 
 const mergeTemplates = (locals) => {
 
-    locals.template.helper = Object.assign({layout: locals.layout.name}, locals.layout.helper, locals.template.helper);
+    locals.template.helper = Object.assign(
+        {layout: locals.layout.name},
+        locals.layout.helper,
+        locals.template.helper
+    );
 };
 
 const setRoutes = (locals, routes) => {
@@ -59,7 +64,7 @@ module.exports = (options) => {
 
     try {
 
-        const {server, routes, handlers} = options;
+        const {server, express, routes, handlers} = options;
         const {viewEngine} = JSON.parse(process.env.CONFIG);
 
         routes.forEach((route, i) => {
@@ -75,6 +80,8 @@ module.exports = (options) => {
                 routes: routes
             };
 
+            server.use('/bower_components', express.static(path.join(__dirname, '../../bower_components')));
+            logger.environment.info(`GET method enabled for: bower_components/*`);
             if (params.method.toLowerCase() === 'get') {
 
                 server.get(route.path, setTemplateMiddleware(opt), params.handle);

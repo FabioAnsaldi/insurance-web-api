@@ -1,0 +1,20 @@
+{
+  "name": "insurance-web-api",
+  "description": "We want to create a Web API that exposes API services.",
+  "main": "index.js",
+  "authors": [
+    "Fabio Ansaldi"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/FabioAnsaldi/insurance-web-api",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "bootstrap-3.2#^4.2.1"
+  }
+}
