@@ -67,6 +67,8 @@ module.exports = (options) => {
         const {server, express, routes, handlers} = options;
         const {viewEngine} = JSON.parse(process.env.CONFIG);
 
+        server.use('/bower_components', express.static(path.join(__dirname, '../../bower_components')));
+        logger.environment.info(`GET method enabled for: bower_components/*`);
         routes.forEach((route, i) => {
 
             let params = getHandler({handle: route.handle, handlers});
@@ -80,8 +82,6 @@ module.exports = (options) => {
                 routes: routes
             };
 
-            server.use('/bower_components', express.static(path.join(__dirname, '../../bower_components')));
-            logger.environment.info(`GET method enabled for: bower_components/*`);
             if (params.method.toLowerCase() === 'get') {
 
                 server.get(route.path, setTemplateMiddleware(opt), params.handle);

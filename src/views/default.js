@@ -11,9 +11,15 @@ module.exports = (res) => {
             echoNav: () => {
 
                 let links = '';
+
                 res.locals.routes.forEach((route, i) => {
 
-                    links += `<a href="${route.path}" title="${route.title}">${route.title}</a>`;
+                    let _class = '';
+
+                    if (res.locals.path === route.path) _class = 'active';
+                    links += `<li class="nav-item ${_class}">`;
+                    links += `<a class="nav-link" href="${route.path}" title="${route.title}">${route.title}</a>`;
+                    links += '</li>';
                 });
                 return links;
             }
