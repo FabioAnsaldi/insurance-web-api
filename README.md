@@ -25,6 +25,7 @@ Go to the repository directory and run the following commands:
 ```sh
 $ cd insurance-web-api
 $ npm install
+$ bower install
 $ npm run start
 ```
 

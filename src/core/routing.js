@@ -67,7 +67,7 @@ module.exports = (options) => {
         const {server, express, routes, handlers} = options;
         const {viewEngine} = JSON.parse(process.env.CONFIG);
 
-        server.use('/bower_components', express.static(path.join(__dirname, '../../bower_components')));
+        server.use('/assets', express.static(path.join(__dirname, '../../bower_components')));
         logger.environment.info(`GET method enabled for: bower_components/*`);
         routes.forEach((route, i) => {
 
