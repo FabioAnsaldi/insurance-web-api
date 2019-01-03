@@ -11,7 +11,7 @@
     {{/if}}
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap/dist/css/bootstrap.min.css">
     <script type="text/javascript" src="/assets/requirejs/require.js"></script>
-    {{{requireModule}}}
+    <script>requirejs(['./app/common'], function (common) { requirejs(['app/{{{requireModule}}}']); });</script>
 </head>
     <body>
         <header>

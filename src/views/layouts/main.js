@@ -25,11 +25,7 @@ module.exports = (res) => {
             },
             requireModule: () => {
 
-                let tag = '<script>';
-
-                tag += "requirejs(['./app/common'], function (common) { requirejs(['app/main']); });";
-                tag += '</script>';
-                return tag;
+                return res.locals.template.name;
             }
         }
     }
