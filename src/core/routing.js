@@ -22,8 +22,7 @@ const mergeTemplates = (locals) => {
 
     locals.template.helper = Object.assign(
         {layout: locals.layout.name},
-        locals.layout.helper,
-        locals.template.helper
+        locals.layout.helper
     );
 };
 
@@ -69,6 +68,8 @@ module.exports = (options) => {
 
         server.use('/assets', express.static(path.join(__dirname, '../../bower_components')));
         logger.environment.info(`GET method enabled for: bower_components/*`);
+        server.use('/app', express.static(path.join(__dirname, '../app')));
+        logger.environment.info(`GET method enabled for: app/*`);
         routes.forEach((route, i) => {
 
             let params = getHandler({handle: route.handle, handlers});

@@ -15,6 +15,6 @@ module.exports = [
         description: 'The log in page',
         content: '<p>Welcome to the log in page!</p>',
         handle: 'simpleView',
-        template: 'default'
+        template: 'login'
     }
 ];

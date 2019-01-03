@@ -6,6 +6,8 @@ module.exports = (res) => {
 
         title: res.locals.title,
         content: res.locals.content,
-        helpers: {}
+        helpers: {
+
+        }
     }
 };
